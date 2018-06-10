@@ -16,6 +16,7 @@ import { AppRoutingModule } from 'src/app/app-routing-module';
 import { AuthService } from 'src/app/auth-service';
 import { AuthGuard } from 'src/app/auth-guard.service';
 import { CanDeactivateGuard } from 'src/app/servers/edit-server/can-deactivate-service-guard';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 
 
@@ -28,7 +29,8 @@ import { CanDeactivateGuard } from 'src/app/servers/edit-server/can-deactivate-s
     UserComponent,
     EditServerComponent,
     ServerComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
