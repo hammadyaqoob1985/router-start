@@ -13,6 +13,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AuthGuard } from "src/app/auth-guard.service";
 import { CanDeactivateGuard } from "src/app/servers/edit-server/can-deactivate-service-guard";
 import { ErrorPageComponent } from "src/app/error-page/error-page.component";
+import { ServerResolver } from "src/app/servers/server/server-resolver.service";
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
@@ -24,7 +25,7 @@ const appRoutes: Routes = [
     canActivateChild: [AuthGuard],
     component: ServersComponent, 
     children: [
-      { path: ':id', component: ServerComponent },
+      { path: ':id', component: ServerComponent, resolve: {server: ServerResolver} },
       { path: ':id/edit', component: EditServerComponent, canDeactivate: [CanDeactivateGuard] }
     ] },
    // { path: 'not-found', component: PageNotFoundComponent},
